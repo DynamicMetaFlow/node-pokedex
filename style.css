@@ -32,5 +32,6 @@ th {
 div.type {
   color: white;
   border-radius: 15px; 
-  border: 1px solid #9B6470;
+  border: 1px solid #9B9B9B;
+  width: 50%;
 }
