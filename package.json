@@ -6,7 +6,7 @@
   "window": {
     "title": "Pokedex",
     "toolbar": false,
-    "width": 420,
+    "width": 430,
     "height": 790
   },
   "chromium-args": "--child-clean-exit"
