@@ -1255,12 +1255,11 @@ var typechart = {
   }
 };
 
-
 var typecolor = {
   Normal:   "#A8A878",
   Fire:     "#F08030",
   Water:    "#6890F0",
-  Electric: "#F8D030"
+  Electric: "#F8D030",
   Grass:    "#78C850",
   Ice:      "#98D8D8",
   Fighting: "#C03028",
@@ -1275,4 +1274,4 @@ var typecolor = {
   Dark:     "#705848",
   Steel:    "#B8B8D0",
   Fairy:    "#EE99AC"
-}
+};
