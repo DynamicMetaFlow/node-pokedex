@@ -1,0 +1,13 @@
+{
+  "name": "pokedex",
+  "main": "index.html",
+  "version": "0.1",
+  "single-instance": true,
+  "window": {
+    "title": "Pokedex",
+    "toolbar": false,
+    "width": 400,
+    "height": 800
+  },
+  "chromium-args": "--child-clean-exit"
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pokedex</title>
+  <style>
+    @import url('style.css');
+  </style>
+</head>
+<body>
+  <script src="jquery-2.1.1.min.js"></script>
+  <script src="Chart.min.js"></script>
+  <script type="text/javascript" src="pokedata.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <div style="width: 400px;">
+    <input style="width: 80%;" type="text" id="poketext"/>
+    <button style="witdh: 20%;" onclick="pokesearch()">Search</button> 
+    <br>
+    <div style="float: left; width: 200px;">
+      <h1 id="pokename"> --- </h1>  
+      <table style="width: 100%;">
+        <tr><th> Abilities </th></tr>
+        <tr><td id="abilities"></td></tr>
+      </table>
+    </div>
+    <img alt="" id="pokepic" src="">
+    <br>
+    <table id="typing" style="width: 400px;">
+      <tr>
+        <th colspan="3"> Type: </th>
+      </tr>
+      <tr>
+        <td id="types" colspan="3"> --- </td>
+      </tr>
+      <tr>
+        <th> Resists: </th>
+        <th> Weakness: </th>
+        <th> Immune: </th>
+      </tr>
+      <tr>
+        <td id="resist"> --- </td>
+        <td contenteditable id="weak"> --- </td>
+        <td contenteditable id="immune"> --- </td>
+      </tr>
+    </table>
+    <canvas id="stats" width="400" height="400"></canvas>
+  </div>
+</body>
+</html>
