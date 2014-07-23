@@ -63,9 +63,13 @@ function pokesearch(){
   var resist = [], weak = [], immune = [];
   for (var key in default_dmg){
     if ($.inArray(key, nontypes) == -1){
-      if (default_dmg[key] < 1 && default_dmg[key] > 0) resist.push(key);
-      if (default_dmg[key] > 1) weak.push(key);
-      if (default_dmg[key] == 0) immune.push(key);
+      switch(default_dmg[key]){
+        case 0.25:  resist.push(bold(key)); break;
+        case 0.5:   resist.push(key);       break;
+        case 2:     weak.push(key);         break;
+        case 4:     weak.push(bold(key));   break;
+        case 0:     immune.push(key);       break;
+      }
     }
   }
   $('#resist').html(resist.join(', '));
