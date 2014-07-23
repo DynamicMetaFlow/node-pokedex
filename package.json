@@ -7,7 +7,7 @@
     "title": "Pokedex",
     "toolbar": false,
     "width": 430,
-    "height": 790
+    "height": 800
   },
   "chromium-args": "--child-clean-exit"
 }
