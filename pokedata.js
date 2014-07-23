@@ -1264,7 +1264,7 @@ var typecolor = {
   Ice:      "#98D8D8",
   Fighting: "#C03028",
   Poison:   "#A040A0",
-  Ground:   "#E0C068"
+  Ground:   "#E0C068",
   Flying:   "#6D5E9C",
   Psychic:  "#F85888",
   Bug:      "#A8B820",
