@@ -29,8 +29,10 @@ function pokesearch(){
       $('#poketext').val().toLowerCase()+'.jpg'
   });
 
-  $('#abilities').html(Object.keys(pokemon.abilities).map(
-    key => pokemon.abilities[key]).join(', '));
+  $('#abilities').html(Object.keys(pokemon.abilities).map(function (key){
+      return pokemon.abilities[key];
+    }).join(', ')
+  );
   var default_dmg = {
     "Bug": 1,
     "Dark": 1,
