@@ -1,6 +1,10 @@
 var nontypes = ['psn', 'brn', 'powder', 'trapped', 'sandstorm',
 'tox', 'hail', 'frz', 'par']
 
+function bold(text){
+  return "<b>" + text + "</b>";
+}
+
 function effectiveness(type, effect_chart){
   $.each(typechart[type].damageTaken, function(index, val) {
     if ($.inArray(index, nontypes) == -1){
