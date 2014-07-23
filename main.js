@@ -1,8 +1,12 @@
 var nontypes = ['psn', 'brn', 'powder', 'trapped', 'sandstorm',
-'tox', 'hail', 'frz', 'par']
+'tox', 'hail', 'frz', 'par'];
 
 function bold(text){
   return "<b>" + text + "</b>";
+}
+
+function typeformat(type){
+  return '<div class=\"type\" style=\"background:' + typecolor[type] + '\">' + type + '</div>';
 }
 
 function effectiveness(type, effect_chart){
@@ -19,7 +23,7 @@ function effectiveness(type, effect_chart){
 
 function pokesearch(){
   var pokemon = pokedex[$('#poketext').val().toLowerCase()];
-  if (pokemon == null){
+  if (pokemon === null){
     alert("Invalid Pokemon Name!");
     return;
   } else {
@@ -64,17 +68,17 @@ function pokesearch(){
   for (var key in default_dmg){
     if ($.inArray(key, nontypes) == -1){
       switch(default_dmg[key]){
-        case 0.25:  resist.push(bold(key)); break;
-        case 0.5:   resist.push(key);       break;
-        case 2:     weak.push(key);         break;
-        case 4:     weak.push(bold(key));   break;
-        case 0:     immune.push(key);       break;
+        case 0.25:  resist.push(typeformat(bold(key))); break;
+        case 0.5:   resist.push(typeformat(key));       break;
+        case 2:     weak.push(typeformat(key));         break;
+        case 4:     weak.push(typeformat(bold(key)));   break;
+        case 0:     immune.push(typeformat(key));       break;
       }
     }
   }
-  $('#resist').html(resist.join(', '));
-  $('#weak').html(weak.join(', '));
-  $('#immune').html(immune.join(', '));
+  $('#resist').html(resist.join());
+  $('#weak').html(weak.join());
+  $('#immune').html(immune.join());
 
   var base_stats = pokemon.baseStats;
 
