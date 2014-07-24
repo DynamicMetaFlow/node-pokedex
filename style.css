@@ -36,3 +36,38 @@ div.type {
   margin-left: auto;
   margin-right: auto;
 }
+
+#type_one {
+  width: 50%;
+  float: left;
+}
+#type_two{
+  width: 50%;
+  float: right;
+}
+
+span.dropt {
+  background: #ddddff;
+}
+
+span.dropt:hover{
+  text-decoration: none;
+  background: #ffffff;
+  z-index: 6;
+}
+
+span.dropt span {
+  position: absolute;
+  left: -9999px;
+  margin: 20px 0 0 0px;
+  padding: 3px 3px 3px 3px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  z-index: 6;
+}
+
+span.dropt:hover span{
+  left: 2%; 
+  background: #ffffff;
+}
