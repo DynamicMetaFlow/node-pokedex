@@ -30,8 +30,9 @@ th {
 }
 
 div.type {
-  color: white;
-  border-radius: 15px; 
-  border: 1px solid #9B9B9B;
-  width: 50%;
+  color: black;
+  width: 100px;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }
