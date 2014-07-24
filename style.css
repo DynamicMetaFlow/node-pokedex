@@ -7,16 +7,19 @@ html {
 table {
   text-align: center;
   table-layout: fixed;
+  background-color: white;
 }
 
 img {
   display: block;
   float: right;
+  background: white;
   max-width: 180px;
   max-height: 180px;
   width: auto;
   height: auto;
-  padding: 10px;
+  border: 2px solid black;
+  padding: 5px;
 }
 
 td, th {
@@ -37,7 +40,7 @@ div.type {
   margin-right: auto;
   border-radius: 5px;
   border-width: 3px;
-  border-color: #EEEEEE;
+  border-color: #999999;
 }
 
 #type_one {
