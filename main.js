@@ -6,7 +6,7 @@ function bold(text){
 }
 
 function typeformat(type, text){
-  if (typeof(text) === null) text = type;
+  if (text === null) text = type;
   return '<div class=\"type\" style=\"background:' + typecolor[type] + '\">' + text + '</div>';
 }
 
@@ -29,10 +29,8 @@ function pokesearch(){
     return;
   } 
   $('#pokename').html(pokemon.species);
-  $('#types').html(pokemon.types.map(function(elem) {
-      return typeformat(elem, elem);
-  }).join(""));
-
+  $('#type_one').html(typeformat(pokemon.types[0]));
+  if (!(pokemon.types[1] === null)) $('#type_two').html(typeformat(pokemon.types[1]));
   $('#pokepic').attr({
     alt: pokemon.species,
     src: 'http://img.pokemondb.net/artwork/'+
