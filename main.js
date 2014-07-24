@@ -10,6 +10,13 @@ function typeformat(type, text){
   return '<div class=\"type\" style=\"background:' + typecolor[type] + '\">' + text + '</div>';
 }
 
+function abilityformat(ab, text){
+  alert(ab);
+  return "<span class='dropt' title='"+text+"'>"+
+    text+"<span style='width: 180px;'>"+
+    abilitydex[ab].shortDesc+"</span></span>";
+}
+
 function effectiveness(type, effect_chart){
   $.each(typechart[type].damageTaken, function(index, val) {
     if ($.inArray(index, nontypes) == -1){
@@ -38,7 +45,8 @@ function pokesearch(){
   });
 
   $('#abilities').html(Object.keys(pokemon.abilities).map(function (key){
-      return pokemon.abilities[key];
+      var ability = pokemon.abilities[key].replace(/\s+/g,'').toLowerCase();
+      return abilityformat(ability, pokemon.abilities[key]);
     }).join(', ')
   );
   var default_dmg = {
