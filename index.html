@@ -16,10 +16,16 @@
     <button style="witdh: 20%;" onclick="pokesearch()">Query</button> 
     <br>
     <div style="float: left; width: 200px;">
-      <h1 id="pokename"> --- </h1>  
+      <h1 id="pokename"> --- </h1> 
       <table style="width: 100%;">
-        <tr><th> Abilities </th></tr>
-        <tr><td id="abilities"> --- </td></tr>
+        <tr><th colspan="2"> Abilities </th></tr>
+        <tr>
+          <td id="ability_one"> --- </td>
+          <td id="ability_two"> --- </td>
+        </tr>
+        <tr>
+          <td id="ability_hidden" colspan="2"> --- </td>
+        </tr>
       </table>
     </div>
     <img alt="" id="pokepic" src="">
@@ -30,8 +36,12 @@
       </tr>
       <tr>
         <td colspan="3">
-          <div id="type_one"> --- </div>
-          <div id="type_two"> --- </div>
+          <div id="type_one"> 
+            --- 
+          </div>
+          <div id="type_two"> 
+            --- 
+          </div>
         </td>
       </tr>
       <tr>
