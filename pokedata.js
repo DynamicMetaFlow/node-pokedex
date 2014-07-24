@@ -1256,22 +1256,22 @@ var typechart = {
 };
 
 var typecolor = {
-  Normal:   "#A8A878",
+  Normal:   "#C8C898",
   Fire:     "#F08030",
   Water:    "#6890F0",
   Electric: "#F8D030",
   Grass:    "#78C850",
   Ice:      "#98D8D8",
   Fighting: "#C03028",
-  Poison:   "#A040A0",
+  Poison:   "#B050B0",
   Ground:   "#E0C068",
-  Flying:   "#6D5E9C",
+  Flying:   "#7D6EAC",
   Psychic:  "#F85888",
   Bug:      "#A8B820",
   Rock:     "#B8A038",
-  Ghost:    "#705898",
-  Dragon:   "#7038F8",
-  Dark:     "#705848",
+  Ghost:    "#8068A8",
+  Dragon:   "#8048F8",
+  Dark:     "#786050",
   Steel:    "#B8B8D0",
   Fairy:    "#EE99AC"
 };
