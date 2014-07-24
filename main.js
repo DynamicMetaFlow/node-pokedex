@@ -1,18 +1,17 @@
-var nontypes = ['psn', 'brn', 'powder', 'trapped', 'sandstorm',
-'tox', 'hail', 'frz', 'par'];
+var nontypes = ['psn', 'brn', 'powder', 'trapped', 'sandstorm', 'tox', 'hail', 'frz', 'par'];
 
 function bold(text){
   return "<b>" + text + "</b>";
 }
 
 function typeformat(type, text){
-  if (text === null) text = type;
-  return '<div class=\"type\" style=\"background:' + typecolor[type] + '\">' + text + '</div>';
+  if (text == null) text = type;
+  return '<div class=\"type\" style=\"background:' + 
+    typecolor[type] + '\">' + text + '</div>';
 }
 
 function abilityformat(ab, text){
-  alert(ab);
-  return "<span class='dropt' title='"+text+"'>"+
+  return "<span class='dropt'>"+
     text+"<span style='width: 180px;'>"+
     abilitydex[ab].shortDesc+"</span></span>";
 }
@@ -28,6 +27,17 @@ function effectiveness(type, effect_chart){
   return effect_chart;
 }
 
+function applyAbility(index, id, pokemon){
+  if (pokemon.abilities[index] != null) {
+    $(id).html(abilityformat(
+        pokemon.abilities[index].replace(/\s+/g,'').toLowerCase(),
+        pokemon.abilities[index]
+      )
+    );
+  } else {
+    $(id).html('---');
+  }
+}
 
 function pokesearch(){
   var pokemon = pokedex[$('#poketext').val().toLowerCase()];
@@ -37,18 +47,21 @@ function pokesearch(){
   } 
   $('#pokename').html(pokemon.species);
   $('#type_one').html(typeformat(pokemon.types[0]));
-  if (!(pokemon.types[1] === null)) $('#type_two').html(typeformat(pokemon.types[1]));
+  if (pokemon.types[1] != null) {
+    $('#type_two').html(typeformat(pokemon.types[1]));
+  } else {
+    $('#type_two').html('---');
+  }
   $('#pokepic').attr({
     alt: pokemon.species,
     src: 'http://img.pokemondb.net/artwork/'+
       $('#poketext').val().toLowerCase()+'.jpg'
   });
 
-  $('#abilities').html(Object.keys(pokemon.abilities).map(function (key){
-      var ability = pokemon.abilities[key].replace(/\s+/g,'').toLowerCase();
-      return abilityformat(ability, pokemon.abilities[key]);
-    }).join(', ')
-  );
+  applyAbility(0,"#ability_one", pokemon);
+  applyAbility(1,"#ability_two", pokemon);
+  applyAbility("H","#ability_hidden", pokemon);
+
   var default_dmg = {
     "Bug": 1,
     "Dark": 1,
