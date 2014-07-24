@@ -5,8 +5,8 @@ function bold(text){
   return "<b>" + text + "</b>";
 }
 
-function typeformat(type){
-  return '<div class=\"type\" style=\"background:' + typecolor[type] + '\">' + type + '</div>';
+function typeformat(type, text){
+  return '<div class=\"type\" style=\"background:' + typecolor[type] + '\">' + text + '</div>';
 }
 
 function effectiveness(type, effect_chart){
@@ -26,10 +26,11 @@ function pokesearch(){
   if (pokemon === null){
     alert("Invalid Pokemon Name!");
     return;
-  } else {
-    $('#pokename').html(pokemon.species);
-    $('#types').html(pokemon.types.join(" and "));
-  }
+  } 
+  $('#pokename').html(pokemon.species);
+  $('#types').html(pokemon.types.map(function(elem) {
+      return typeformat(elem, elem);
+  }).join(""));
 
   $('#pokepic').attr({
     alt: pokemon.species,
@@ -68,17 +69,17 @@ function pokesearch(){
   for (var key in default_dmg){
     if ($.inArray(key, nontypes) == -1){
       switch(default_dmg[key]){
-        case 0.25:  resist.push(typeformat(bold(key))); break;
-        case 0.5:   resist.push(typeformat(key));       break;
-        case 2:     weak.push(typeformat(key));         break;
-        case 4:     weak.push(typeformat(bold(key)));   break;
-        case 0:     immune.push(typeformat(key));       break;
+        case 0.25:  resist.unshift(typeformat(key, bold(key))); break;
+        case 0.5:   resist.push(typeformat(key, key));       break;
+        case 2:     weak.push(typeformat(key, key));         break;
+        case 4:     weak.unshift(typeformat(key, bold(key)));   break;
+        case 0:     immune.push(typeformat(key, key));       break;
       }
     }
   }
-  $('#resist').html(resist.join());
-  $('#weak').html(weak.join());
-  $('#immune').html(immune.join());
+  $('#resist').html(resist.join(""));
+  $('#weak').html(weak.join(""));
+  $('#immune').html(immune.join(""));
 
   var base_stats = pokemon.baseStats;
 
