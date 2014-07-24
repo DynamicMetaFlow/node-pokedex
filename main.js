@@ -1,7 +1,7 @@
 var nontypes = ['psn', 'brn', 'powder', 'trapped', 'sandstorm', 'tox', 'hail', 'frz', 'par'];
 
 function bold(text){
-  return "<b>" + text + "</b>";
+  return "<b><i>" + text + "</i></b>";
 }
 
 function typeformat(type, text){
@@ -119,6 +119,10 @@ function pokesearch(){
     }]
   };
   var stats_chart = new Chart(ctx).Bar(data, {});
+  $('#stats').css({
+    'background': 'white',
+    'padding': '5px'
+  });
   return;
 }
 
