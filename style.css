@@ -30,11 +30,14 @@ th {
 }
 
 div.type {
-  color: black;
+  color: white;
   width: 100px;
   padding: 5px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 5px;
+  border-width: 3px;
+  border-color: #EEEEEE;
 }
 
 #type_one {
@@ -61,6 +64,7 @@ span.dropt span {
   left: -9999px;
   margin: 20px 0 0 0px;
   padding: 3px 3px 3px 3px;
+  border-radius: 5px;
   border-style: solid;
   border-color: black;
   border-width: 1px;
