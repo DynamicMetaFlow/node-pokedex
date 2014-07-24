@@ -6,6 +6,7 @@ function bold(text){
 }
 
 function typeformat(type, text){
+  if (typeof(text) === null) text = type;
   return '<div class=\"type\" style=\"background:' + typecolor[type] + '\">' + text + '</div>';
 }
 
@@ -70,10 +71,10 @@ function pokesearch(){
     if ($.inArray(key, nontypes) == -1){
       switch(default_dmg[key]){
         case 0.25:  resist.unshift(typeformat(key, bold(key))); break;
-        case 0.5:   resist.push(typeformat(key, key));       break;
-        case 2:     weak.push(typeformat(key, key));         break;
+        case 0.5:   resist.push(typeformat(key));       break;
+        case 2:     weak.push(typeformat(key));         break;
         case 4:     weak.unshift(typeformat(key, bold(key)));   break;
-        case 0:     immune.push(typeformat(key, key));       break;
+        case 0:     immune.push(typeformat(key));       break;
       }
     }
   }
