@@ -6,7 +6,7 @@ function bold(text){
 
 function typeformat(type, text){
   if (text == null) text = type;
-  return '<div class=\"type\" style=\"background:' + 
+  return '<div class=\"type\" style=\"background:' +
     typecolor[type] + '\">' + text + '</div>';
 }
 
@@ -43,8 +43,9 @@ function pokesearch(){
   var pokemon = pokedex[$('#poketext').val().toLowerCase()];
   if (pokemon === null){
     alert("Invalid Pokemon Name!");
+    console.log("Invalid Poke-Name!");
     return;
-  } 
+  }
   $('#pokename').html(pokemon.species);
   $('#type_one').html(typeformat(pokemon.types[0]));
   if (pokemon.types[1] != null) {
@@ -113,7 +114,7 @@ function pokesearch(){
       highlightFill: "rgba(0,0,220,0.95)",
       highlightStroke: "rgba(220,220,220,1)",
       data: [
-        base_stats.hp, base_stats.atk, base_stats.def, base_stats.spa, 
+        base_stats.hp, base_stats.atk, base_stats.def, base_stats.spa,
         base_stats.spd, base_stats.spe
       ]
     }]
@@ -125,4 +126,3 @@ function pokesearch(){
   });
   return;
 }
-
