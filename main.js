@@ -126,3 +126,9 @@ function pokesearch(){
   });
   return;
 }
+
+$("#poketext").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#pokebutton").click();
+    }
+});
